@@ -18,16 +18,36 @@
     <strong class="capitalize">{{ folder }}</strong>
     <p>Hit Me at <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/sunbreathingg_">sunbreathingg_</a></p>
     <div id="card">
-      <ion-card>
+      <ion-card (click)="openModal()">
         <ion-card-header>
-          <ion-img src="assets/img/Cat03.jpg"></ion-img>
-          <ion-card-subtitle>Cat</ion-card-subtitle>
+          <ion-img src="assets/img/H1D022040.jpeg"></ion-img>
+          <ion-card-subtitle>Fahmi</ion-card-subtitle>
         </ion-card-header>
-
-        <ion-card-content>
-          This is Orange Cat.
-        </ion-card-content>
       </ion-card>
     </div>
   </div>
+
+  <!-- Modal untuk detail informasi -->
+  <ion-modal #detailModal>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="closeModal()">Close</ion-button>
+        </ion-buttons>
+        <ion-title>Detail Informasi</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-card>
+        <ion-img src="assets/img/H1D022040.jpeg"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>{{ folder }}</ion-card-subtitle> <!-- Menampilkan folder -->
+          <ion-card-title>Informasi Lengkap</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{ detailInfo }}</p> <!-- Menampilkan detail informasi -->
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-modal>
 </ion-content>
